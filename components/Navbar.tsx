@@ -118,7 +118,7 @@ const Navbar = () => {
 
                 {/* Mobile menu */}
                 {isOpen && (
-                    <div className="bg-white/80 rounded-lg bg-opacity-50 md:hidden">
+                    <div className="bg-white/85 rounded-lg bg-opacity-50 md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-2">
                             {navLinks.map((link) => (
                                 <Link
