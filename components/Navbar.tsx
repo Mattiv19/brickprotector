@@ -94,13 +94,13 @@ const Navbar = () => {
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
-                            className={`inline-flex items-center justify-center p-2 rounded-md text-navy-blue hover:scale-105 focus:outline-none transition duration-100 ${isOpen ? 'text-white bg-navy-blue' : ''}`}
+                            className={`inline-flex items-center justify-center p-2 rounded-md text-navy-blue hover:scale-105 focus:outline-none transition duration-200 ${isOpen ? 'text-white bg-navy-blue' : ''}`}
                             aria-expanded={isOpen}
                         >
                             <div className="w-6 h-6 flex items-center justify-center relative">
                                 {/* Three lines that transform to X */}
                                 <span
-                                    className={`absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'rotate-45' : '-translate-y-1.5'
+                                    className={`absolute h-0.5 w-5 bg-current transform transition duration-400 ease-out ${isOpen ? 'rotate-45' : '-translate-y-1.5'
                                         }`}
                                 ></span>
                                 <span
@@ -108,7 +108,7 @@ const Navbar = () => {
                                         }`}
                                 ></span>
                                 <span
-                                    className={`absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isOpen ? '-rotate-45' : 'translate-y-1.5'
+                                    className={`absolute h-0.5 w-5 bg-current transform transition duration-400 ease-out ${isOpen ? '-rotate-45' : 'translate-y-1.5'
                                         }`}
                                 ></span>
                             </div>
