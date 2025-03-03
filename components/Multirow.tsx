@@ -32,7 +32,7 @@ const Multirow = () => {
                             Made with premium-grade materials, our cases are transparant and built to last. They ensure your LEGO collectibles stay in perfect condition while offering a beautiful display.
                         </p>
                     </div>
-                    {/* Left side - Image */}
+                    {/* Right side - Image */}
                     <div className="w-full md:w-1/2">
                         <Image
                             src="/img/plastic_granules.jpg"
