@@ -3,7 +3,7 @@ import React from 'react'
 
 const Multirow = () => {
     return (
-        <>
+        <section>
             <div className="w-full py-16 px-4 bg-white">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
                     {/* Left side - Image */}
@@ -64,8 +64,7 @@ const Multirow = () => {
                     </div>
                 </div>
             </div>
-        </>
-
+        </section>
     )
 }
 
