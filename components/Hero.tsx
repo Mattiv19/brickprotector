@@ -5,10 +5,10 @@ import { Button } from './ui/button'
 const Hero = () => {
     return (
         <div className='pt-28 w-full'>
-            <Image src="/img/hero.png" alt="Brickprotector" layout='responsive' width={1088} height={254} />
-            <div className="absolute top-[30%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-20 py-10 rounded-lg shadow-lg text-center z-10">
-                <h2 className="text-2xl md:text-4xl font-bold mb-8">Protect your collectibles</h2>
-                <Button className="bg-navy-blue hover:bg-gray-100 text-white hover:text-navy-blue font-medium py-2 px-6 rounded transition duration-300 hover:scale-102">
+            <Image src="/img/hero.png" alt="Brickprotector" style={{ width: '100%', height: 'auto' }} width={1088} height={254} />
+            <div className="flex flex-col items-center justify-center text-center mt-10 md:absolute md:top-[19%] lg:top-[22%] xl:top-[25%] md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:bg-white md:px-7 md:py-5 lg:px-13 lg:py-10 xl:px-17 md:rounded-lg md:shadow-lg md:text-center md:z-10">
+                <h2 className="text-2xl lg:text-4xl font-bold mb-8 md:mb-5 lg:mb-8 xl:mb-10 text-navy-blue">Protect your collectibles</h2>
+                <Button className="bg-navy-blue hover:bg-gray-100 text-white hover:text-navy-blue font-medium py-5 px-6 rounded transition duration-300 hover:scale-102">
                     Shop All
                 </Button>
             </div>
