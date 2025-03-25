@@ -1,9 +1,12 @@
 import React from 'react'
 import { Button } from '../ui/button'
+import { getPayload } from 'payload';
+import { Product } from '../../payload-types';
+import config from '@payload-config'
 
 
 
-const products = [
+/* const products = [
     {
         id: 1,
         name: 'Lego BrickHeadz Protector',
@@ -37,23 +40,34 @@ const products = [
         imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     },
 ]
+    */
 
-const Products = () => {
+const Products = async () => {
+    const payload = await getPayload({ config });
+
+    const products = await payload.find({
+        collection: 'products',
+        limit: 10,
+        depth: 3,
+    });
+
+    console.log(JSON.stringify(products.docs[0], null, 2));
+
     return (
         <div className='pt-20 bg-white'>
             <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                 <h1 className='text-3xl md:text-5xl font-bold text-navy-blue mb-12'>Products</h1>
                 <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-                    {products.map((product) => (
+                    {products.docs.map((product: Product) => (
                         <div className='border-1 border-navy-blue rounded-2xl p-4 bg-slate-50'>
-                            <a key={product.id} href={product.href} className="group">
+                            <a key={product.id} href={`/products/${product.slug}`} className="group">
                                 <img
-                                    alt={product.imageAlt}
-                                    src={product.imageSrc}
+                                    alt={product.images[0]?.alt}
+                                    src={typeof product.images[0]?.image === 'object' && product.images[0]?.image.url ? product.images[0]?.image.url : ''}
                                     className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8"
                                 />
                                 <h3 className="mt-4 text-lg font-semibold  text-navy-blue">{product.name}</h3>
-                                <p className="my-2 text-lg text-navy-blue/85">{product.price}</p>
+                                <p className="my-2 text-lg text-navy-blue/85">{product.price} EUR</p>
                             </a>
                             <div className='mt-4 items-center justify-center text-center'>
                                 <Button
